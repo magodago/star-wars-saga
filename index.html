@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STAR WARS — La Saga Completa</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23ffe81f' font-family='sans-serif'%3E%E2%98%85%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23ffe81f' font-family='sans-serif'%3E%E2%98%85%3C/text%3E%3C/svg%3E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="STAR WARS">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -352,12 +357,66 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE — MOBILE FIRST ===== */
 @media (max-width:600px) {
-  .slide { padding: 70px 12px 50px; }
-  #nav { padding: 5px 10px; gap: 8px; }
-  #nav button { width: 28px; height: 28px; font-size: 12px; }
-  #nav .counter { font-size: 10px; min-width: 30px; }
+  .slide { padding: 70px 12px 20px; justify-content: flex-start; overflow-y:auto; }
+  .slide-content { justify-content: flex-start; padding-top:10px; }
+  .slide-header { font-size: clamp(16px,5vw,24px); letter-spacing:2px; margin-bottom:4px; }
+  .slide-subhead { font-size: 10px; margin-bottom:12px; padding-bottom:8px; }
+  .slide-body { font-size: 13px; line-height:1.4; }
+  .grid-2, .grid-3 { grid-template-columns:1fr; gap:8px; }
+  .card { padding:10px; }
+  .card h3 { font-size:13px; }
+  .card p, .card li { font-size:13px; }
+  .card .big { font-size:28px; }
+  .curio-grid { grid-template-columns:1fr; gap:6px; }
+  .curio-item { padding:8px 10px; font-size:13px; }
+  .actor-card { padding:8px 6px; }
+  .actor-card .avatar { width:44px; height:44px; font-size:18px; }
+  .actor-card h4 { font-size:11px; }
+  .actor-card p { font-size:10px; }
+  .cover-title { font-size:clamp(28px,10vw,42px); letter-spacing:4px; }
+  .cover-sub { font-size:11px; letter-spacing:6px; margin-bottom:16px; }
+  .cover-tagline { font-size:12px; }
+  .cover-date { font-size:10px; bottom:50px; }
+  .timeline { padding-left:16px; }
+  .timeline-item { padding:3px 0 8px 8px; }
+  .timeline-item::before { width:8px; height:8px; left:-21px; top:8px; }
+  .timeline-item .year { font-size:11px; }
+  .timeline-item .desc { font-size:12px; }
+  #nav { bottom:12px; padding:6px 12px; gap:6px; }
+  #nav button { width:40px; height:40px; font-size:18px; }
+  #nav .counter { font-size:10px; min-width:36px; }
+  #nav .dots { gap:4px; }
+  #nav .dot { width:5px; height:5px; }
+  #nav .dot.active { width:16px; }
+}
+
+/* iPhone 5/SE y pantallas muy pequeñas */
+@media (max-width:380px) {
+  .slide { padding:60px 8px 10px; }
+  .slide-header { font-size:15px; }
+  .cover-title { font-size:24px; letter-spacing:2px; }
+  .cover-sub { font-size:9px; letter-spacing:4px; }
+  .card { padding:6px; }
+  #nav button { width:34px; height:34px; font-size:14px; }
+}
+
+/* Landscape en móvil */
+@media (max-height:450px) and (orientation:landscape) {
+  .slide { padding:50px 16px 10px; }
+  .slide-content { justify-content:flex-start; padding-top:0; }
+  .slide-header { font-size:16px; margin-bottom:2px; }
+  .slide-subhead { margin-bottom:6px; font-size:9px; }
+  .card { padding:6px 8px; }
+  .card p, .card li { font-size:12px; }
+  .actor-card .avatar { width:32px; height:32px; font-size:14px; }
+  .curio-item { padding:5px 8px; font-size:12px; }
+  #nav { bottom:4px; padding:4px 8px; }
+  #nav button { width:30px; height:30px; font-size:14px; }
+  .cover-title { font-size:24px; letter-spacing:3px; }
+  .cover-sub { font-size:9px; margin-bottom:6px; }
+  .cover-date { display:none; }
 }
 </style>
 </head>
